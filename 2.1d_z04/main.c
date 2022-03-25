@@ -4,7 +4,8 @@
 void generuj(short tab[], int , short );
 void wypisz(const short tab[], int );
 void collatz(short tab[], int );
-
+void zmien(short [],int);
+void signum(short [],int);
 #include <time.h>
 int main(void)
 {
@@ -19,9 +20,15 @@ return 1;
 }
 generuj(tab,n,100);
 wypisz(tab, n);
-collatz(tab, n);
 printf("\n");
 wypisz(tab, n);
+int ileNieparzystych(const short [],int);
+int ileParzystych(const short [],int);
+int ileMaksymalnych(const short [],int);
+printf("\n");
+
+printf("Elementy parzyste: %d\n", ileParzystych(tab, n));
+printf("Elementy nieparzystye: %d\n", ileNieparzystych(tab, n));
 
 return 0;
 }
@@ -48,30 +55,23 @@ void wypisz(const short tab[], int n)
 
 }
 
-
-
-void collatz(short tab[], int n)
+int ileNieparzystych(const short tab[], int n)
 {
-    for (int i = 0; i < n; ++i)
-    {
-        if(tab[i]%2==1)
-        {
-             tab[i]= 3 *tab[i] + 1;
-        } else
-        {
+    int nieparzyste=0;
+    for(int i=0;i<n;i++)
+        if(tab[i]%2!=0)
+            nieparzyste++;
+        return nieparzyste;
 
-            do
-            {
-                    (tab[i] /= 2);
-            }
-
-            while(tab[i]%2==0);
-        }
-
-
-    }
+}
+int ileParzystych(const short tab[], int n)
+{
+    int parzyste=0;
+    for(int i=0;i<n;i++)
+        if(tab[i]%2==0)
+            parzyste++;
+            return parzyste;
 
 
 }
-
 

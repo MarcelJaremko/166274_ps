@@ -4,7 +4,8 @@
 void generuj(short tab[], int , short );
 void wypisz(const short tab[], int );
 void collatz(short tab[], int );
-
+void zmien(short [],int);
+void signum(short [],int);
 #include <time.h>
 int main(void)
 {
@@ -22,7 +23,10 @@ wypisz(tab, n);
 collatz(tab, n);
 printf("\n");
 wypisz(tab, n);
-
+zmien(tab, n);
+wypisz(tab, n);
+signum(tab, n);
+wypisz(tab, n);
 return 0;
 }
 
@@ -72,6 +76,28 @@ void collatz(short tab[], int n)
     }
 
 
+}
+void zmien(short tab[], int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        if(tab[i]%2!=0)
+            tab[i]*=2;
+        else
+            tab[i]*=-1;
+    }
+    printf("\n");
+}
+void signum(short tab[], int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        if(tab[i]>0)
+            tab[i]=1;
+        if(tab[i]<0)
+            tab[i]=-1;
+    }
+       printf("\n");
 }
 
 

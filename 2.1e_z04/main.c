@@ -4,7 +4,6 @@
 void generuj(short tab[], int , short );
 void wypisz(const short tab[], int );
 void collatz(short tab[], int );
-
 #include <time.h>
 int main(void)
 {
@@ -19,10 +18,12 @@ return 1;
 }
 generuj(tab,n,100);
 wypisz(tab, n);
-collatz(tab, n);
 printf("\n");
 wypisz(tab, n);
+int ileMaksymalnych(const short [],int);
+printf("\n");
 
+printf("Elementy maksymalne: %d\n", ileMaksymalnych(tab, n));
 return 0;
 }
 
@@ -48,30 +49,19 @@ void wypisz(const short tab[], int n)
 
 }
 
-
-
-void collatz(short tab[], int n)
+int ileMaksymalnych(const short tab[],int n)
 {
-    for (int i = 0; i < n; ++i)
+    int maksymalne=0, ile=0;
+    for(int i=0;i<n;i++)
     {
-        if(tab[i]%2==1)
+        if(tab[i]>maksymalne)
         {
-             tab[i]= 3 *tab[i] + 1;
-        } else
-        {
-
-            do
-            {
-                    (tab[i] /= 2);
-            }
-
-            while(tab[i]%2==0);
+            maksymalne=tab[i];
+            ile=0;
         }
-
-
+        if(tab[i]==maksymalne)
+            ile++;
     }
-
-
+    return ile;
 }
-
 
