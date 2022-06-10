@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1653647637 source:d:\m.n\klon\166274_ps\kolokwium2-marcelijaremko\main.c
+	<stdio.h>
+	"nauczyciel.h"
+	<string.h>
+
+1653645344 d:\m.n\klon\166274_ps\kolokwium2-marcelijaremko\nauczyciel.h
+	<stdbool.h>
+
+1653646523 source:d:\m.n\klon\166274_ps\kolokwium2-marcelijaremko\nauczyciel.c
+	<stdio.h>
+	<string.h>
+	"nauczyciel.h"
+
+1653647845 source:d:\m.n\klon\166274_ps\kolokwium2-marcelijaremko\string.c
+	<stdio.h>
+
